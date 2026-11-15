@@ -34,7 +34,7 @@
   function opslaan(k, v) { try { sessionStorage.setItem(k, v); } catch (e) {} }
 
   /* 2. Binnenvallen, kort na elkaar */
-  var kies = 'section h2, section .lead, .foto.groot, .foto.mini, .strook figure, .sport .onder .foto, .chips li, .bord, .borden .foto, .ook article, .tijden, .adres, section .oogje';
+  var kies = 'section h2, section .lead, .foto.groot, .foto.mini, .sport .onder .foto, .chips li, .bord, .borden .foto, .ook article, .tijden, .adres, section .oogje';
   var lijst = [].slice.call(d.querySelectorAll(kies)).filter(function (el) { return !el.closest('.opening'); });
   lijst.forEach(function (el) { el.classList.add('op'); });
   var io = new IntersectionObserver(function (items) {

@@ -243,3 +243,19 @@ section h2{margin-bottom:28px}
  .duo{gap:28px}
  .twee.gelijk{gap:48px}
 }
+
+/* Rollende band met eten en drinken: schuift langzaam van links naar rechts */
+.tafel{overflow:hidden}
+.band{margin-top:52px;position:relative;width:100vw;left:50%;transform:translateX(-50%);-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.band-spoor{display:flex;width:max-content;animation:rol 55s linear infinite}
+.band:hover .band-spoor{animation-play-state:paused}
+.band-reeks{display:flex;gap:28px;padding-right:28px}
+.kaartje{width:340px;flex:none;margin:0}
+.kaartje img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:10px;box-shadow:0 14px 34px rgba(0,0,0,.3)}
+.kaartje figcaption{padding-top:16px;display:flex;flex-direction:column;gap:2px}
+.kaartje strong{font-family:Georgia,serif;font-weight:400;font-size:23px;color:#fff;line-height:1.2}
+.kaartje span{font-size:16px;color:#ece6cf}
+@keyframes rol{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+@media (max-width:640px){.kaartje{width:260px}.kaartje strong{font-size:20px}.band-spoor{animation-duration:42s}}
+/* Minder beweging of geen script: gewoon een rij die je zelf veegt */
+@media (prefers-reduced-motion:reduce){.band{-webkit-mask-image:none;mask-image:none;overflow-x:auto}.band-spoor{animation:none;padding-left:20px}.band-reeks[aria-hidden]{display:none}}
