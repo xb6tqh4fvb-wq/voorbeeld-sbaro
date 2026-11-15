@@ -1,18 +1,18 @@
-/* Voorbeeld S Baro. Kleuren van het bord boven de deur: donkergroen en goud. */
-:root{--groen:#16302a;--groen2:#1f4038;--goud:#d6b25e;--goud2:#e9cf8c;--room:#f5eedf;--room2:#ebe1cb;--leer:#9b5a37;--inkt:#1d1a14;--grijs:#5d584c;--uit:cubic-bezier(.22,1,.36,1);--open:cubic-bezier(.77,0,.175,1)}
+/* Voorbeeld S Baro. Kleuren uit het café zelf: het groene bord met goud, de olijfgroene muur achter de bar, het leer van de stoelen en het warme lamplicht. */
+:root{--groen:#16302a;--groen2:#1f4038;--nacht:#0f211d;--goud:#d6b25e;--goud2:#ecd394;--room:#f5eedf;--muur:#56553a;--muur2:#4a4932;--leer:#a5613a;--inkt:#1d1a14;--grijs:#5d584c;--uit:cubic-bezier(.22,1,.36,1);--open:cubic-bezier(.77,0,.175,1)}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{background:var(--room);color:var(--inkt);font:18px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--groen);color:var(--inkt);font:18px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.1;letter-spacing:-.01em}
-h2{font-size:clamp(32px,4.6vw,56px);margin-bottom:20px}
-h3{font-size:24px;margin-bottom:8px}
-.wrap{width:min(1180px,100% - 40px);margin-inline:auto}
-section{padding:clamp(72px,10vw,130px) 0}
-.lead{font-size:clamp(18px,1.6vw,21px);color:var(--grijs);max-width:34em;margin-bottom:16px}
-.klein{font-size:15px;color:var(--grijs)}
-.oogje{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--leer);margin-bottom:16px;font-weight:600}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.08;letter-spacing:-.01em}
+h2{font-size:clamp(34px,5vw,62px);margin-bottom:22px}
+h3{font-size:25px;margin-bottom:8px}
+.wrap{width:min(1200px,100% - 40px);margin-inline:auto}
+section{padding:clamp(76px,10vw,136px) 0}
+.lead{font-size:clamp(18px,1.6vw,21px);max-width:34em;margin-bottom:16px}
+.klein{font-size:15px}
+.oogje{font-size:13px;letter-spacing:.24em;text-transform:uppercase;color:var(--goud);margin-bottom:16px;font-weight:600}
 .knoppen{display:flex;gap:12px;flex-wrap:wrap}
 .knop{display:inline-block;background:var(--goud);color:var(--groen);padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:background .3s,transform .3s var(--uit)}
 .knop:hover{background:var(--goud2);transform:translateY(-2px)}
@@ -21,7 +21,7 @@ section{padding:clamp(72px,10vw,130px) 0}
 .voorbeeld{background:var(--leer);color:#fff;text-align:center;font-size:13px;padding:6px 12px}
 
 /* Kop */
-header.top{position:sticky;top:0;z-index:50;background:rgba(22,48,42,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;transition:transform .5s var(--uit)}
+header.top{position:sticky;top:0;z-index:50;background:rgba(15,33,29,.92);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;transition:transform .5s var(--uit)}
 header.top.weg{transform:translateY(-100%)}
 header.top .wrap{display:flex;align-items:center;gap:28px;min-height:68px}
 .merk{font-family:Georgia,serif;font-size:24px;text-decoration:none;color:var(--goud);letter-spacing:.06em;white-space:nowrap}
@@ -29,85 +29,108 @@ header.top .wrap{display:flex;align-items:center;gap:28px;min-height:68px}
 .merk small{display:block;font:11px/1 system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#cfd8d2;margin-top:3px}
 nav{display:flex;gap:24px;font-size:15px;margin-left:auto}
 nav a{text-decoration:none;opacity:.85}nav a:hover{opacity:1;color:var(--goud2)}
-.status{font-size:13px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);white-space:nowrap}
+.status{font-size:13px;padding:7px 14px;border-radius:999px;background:rgba(255,255,255,.08);white-space:nowrap;color:#fff}
 .status::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#9aa59f;margin-right:8px;vertical-align:1px}
 .status.open::before{background:#6fd38a;box-shadow:0 0 0 4px rgba(111,211,138,.2)}
 .status.dicht::before{background:#e08a6a}
 
-/* Opening */
-.opening{position:relative;min-height:calc(100svh - 100px);display:flex;align-items:flex-end;padding:0 0 clamp(48px,8vw,96px);color:#fff;overflow:hidden;background:var(--groen)}
+/* Opening: het lamplicht moet blijven gloeien, alleen links een zachte schaduw voor de tekst */
+.opening{position:relative;min-height:calc(100svh - 100px);display:flex;align-items:flex-end;padding:0 0 clamp(48px,8vw,96px);color:#fff;overflow:hidden;background:var(--nacht)}
 .dia-vak{position:absolute;inset:0}
 .dia{position:absolute;inset:0;opacity:0}
 .dia:first-child{opacity:1}
 .dia img{width:100%;height:100%;object-fit:cover}
-.dia-vak::after{content:"";position:absolute;inset:0;z-index:20;background:linear-gradient(90deg,rgba(14,32,27,.86) 0%,rgba(14,32,27,.55) 45%,rgba(14,32,27,.05) 80%),linear-gradient(0deg,rgba(14,32,27,.6),transparent 40%)}
+.dia-vak::after{content:"";position:absolute;inset:0;z-index:20;background:linear-gradient(90deg,rgba(12,22,18,.78) 0%,rgba(12,22,18,.42) 38%,rgba(12,22,18,0) 66%),linear-gradient(0deg,rgba(12,22,18,.55),transparent 35%)}
 .opening .wrap{position:relative;z-index:30}
-.opening .oogje{color:var(--goud)}
-.opening h1{font-size:clamp(46px,8vw,104px);max-width:9em;margin-bottom:22px}
-.opening .sub{max-width:31em;font-size:clamp(18px,1.8vw,21px);color:#e7e4da;margin-bottom:8px}
+.opening h1{font-size:clamp(46px,8vw,104px);max-width:9em;margin-bottom:22px;text-shadow:0 2px 30px rgba(0,0,0,.35)}
+.opening .sub{max-width:31em;font-size:clamp(18px,1.8vw,21px);color:#f0ece2;margin-bottom:8px}
 .opening .es{font-family:Georgia,serif;font-style:italic;color:var(--goud2);margin-bottom:30px}
-.bijschrift{position:absolute;right:24px;bottom:24px;z-index:30;font-size:13px;color:#fff;display:flex;gap:12px;align-items:center;background:rgba(14,32,27,.55);padding:8px 14px;border-radius:999px}
+.bijschrift{position:absolute;right:24px;bottom:24px;z-index:30;font-size:13px;color:#fff;display:flex;gap:12px;align-items:center;background:rgba(12,22,18,.6);padding:8px 14px;border-radius:999px}
 .bijschrift .nr{color:var(--goud);font-variant-numeric:tabular-nums}
 .bijschrift .tekst{transition:opacity .5s}.bijschrift .tekst.wissel{opacity:0}
 
-/* Twee en drie kolommen */
-.twee{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(36px,6vw,90px);align-items:center}
-.twee.omgekeerd{grid-template-columns:1.1fr .9fr}
-.drie{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:clamp(56px,8vw,96px);border-top:1px solid #d9ccb0;padding-top:40px}
-.drie .nr{display:block;font-family:Georgia,serif;color:var(--leer);font-size:15px;margin-bottom:10px}
-.drie p{color:var(--grijs);font-size:17px}
-.foto{border-radius:6px;overflow:hidden}
+/* Foto's, met een klein label op AI-beelden */
+.foto{position:relative;border-radius:6px;overflow:hidden}
 .foto img{width:100%}
-.foto.staand{max-width:440px;justify-self:end}
-.foto.staand img{aspect-ratio:4/5;object-fit:cover;object-position:50% 42%}
-.kaartje img.boven{object-position:50% 20%}
-.foto figcaption{font-size:14px;color:var(--grijs);padding-top:10px}
+figure.ai{position:relative}
+figure.ai::after{content:"AI-impressie";position:absolute;top:10px;left:10px;font-size:11px;letter-spacing:.06em;color:#fff;background:rgba(0,0,0,.42);padding:3px 8px;border-radius:99px;pointer-events:none}
+figcaption{font-size:15px;padding-top:10px}
 
 /* Donkere secties */
 .donker{background:var(--groen);color:#f2efe6}
-.donker .lead,.donker .klein,.donker p{color:#cdd6d0}
-.donker .oogje{color:var(--goud)}
+.donker .lead,.donker p,.donker figcaption{color:#d3dbd5}
 .donker strong{color:#fff}
-.chips{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 24px}
+
+/* Welkom */
+.twee{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,6vw,90px);align-items:center}
+.welkom .twee{grid-template-columns:.9fr 1.1fr}
+.foto.groot img{aspect-ratio:3/4;object-fit:cover}
+.foto.mini{display:grid;grid-template-columns:120px 1fr;gap:18px;align-items:center;margin-top:28px;border-radius:0;overflow:visible}
+.foto.mini img{aspect-ratio:1;object-fit:cover;object-position:40% 20%;border-radius:50%}
+.foto.mini figcaption{padding:0;font-family:Georgia,serif;font-style:italic;font-size:18px;color:var(--goud2)}
+
+/* Op tafel: tegen de olijfgroene muur van de bar */
+.tafel{background:var(--muur);color:#fff}
+.tafel .oogje{color:var(--goud2)}
+.strook{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:40px}
+.strook figure img{aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+.strook figcaption{color:#f1ecd9}
+
+/* Sport */
+.sport{background:var(--nacht);color:#f2efe6}
+.sport .lead,.sport p{color:#cdd6d0}
+.sport strong{color:#fff}
+.sport a{color:var(--goud2)}
+.kopregel{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:end;margin-bottom:36px}
+.kopregel h2{margin-bottom:0}
+.foto.breed img{aspect-ratio:16/8;object-fit:cover}
+.sport .onder{margin-top:clamp(36px,5vw,64px);grid-template-columns:1.1fr .9fr}
+.chips{list-style:none;display:flex;flex-wrap:wrap;gap:10px;margin:0 0 24px}
 .chips li{border:1px solid rgba(214,178,94,.55);color:var(--goud2);padding:8px 16px;border-radius:999px;font-size:15px}
 .sport p{margin-bottom:14px}
-.sport a{color:var(--goud2)}
 
 /* Krijtbord */
-.kaart{background:var(--room2)}
-.borden{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin:44px 0 24px}
-.bord{background:#22231f radial-gradient(ellipse at 30% 20%,#33352f,#1c1d1a 70%);color:#f1eee4;border:12px solid #a0703f;border-radius:4px;padding:34px 36px;box-shadow:0 18px 40px rgba(40,30,15,.22);font-family:"Chalkboard SE","Chalkboard","Comic Neue","Segoe Print","Bradley Hand",cursive}
-.bord h3{font-family:inherit;font-size:30px;margin-bottom:16px;color:#fff}
-.bord h3.tweede{margin-top:28px}
+.kaart{background:var(--muur2);color:#fff}
+.kaart .oogje{color:var(--goud2)}
+.kaart .lead,.kaart .klein,.kaart figcaption{color:#ece6cf}
+.borden{display:grid;grid-template-columns:1fr 1fr .9fr;gap:28px;margin:44px 0 24px;align-items:start}
+.borden .foto img{aspect-ratio:4/5;object-fit:cover}
+.bord{background:#22231f radial-gradient(ellipse at 30% 20%,#33352f,#1c1d1a 70%);color:#f1eee4;border:12px solid #a0703f;border-radius:4px;padding:30px 30px;box-shadow:0 18px 40px rgba(0,0,0,.3);font-family:"Chalkboard SE","Chalkboard","Comic Neue","Segoe Print","Bradley Hand",cursive}
+.bord h3{font-family:inherit;font-size:28px;margin-bottom:14px;color:#fff}
+.bord h3.tweede{margin-top:26px}
 .bord ul{list-style:none}
-.bord li{display:flex;align-items:baseline;gap:10px;font-size:19px;padding:5px 0}
+.bord li{display:flex;align-items:baseline;gap:10px;font-size:18px;padding:4px 0}
 .bord li span::before{content:"– ";opacity:.6}
 .bord li::after{content:"";order:1;flex:1;border-bottom:1px dotted rgba(255,255,255,.25)}
 .bord li b{order:2;font-weight:400;color:var(--goud2);white-space:nowrap}
-.bord .maand{margin-top:20px;color:var(--goud2);font-size:18px}
+.bord .maand{margin-top:18px;color:var(--goud2);font-size:17px}
 .bord .maand em{font-style:normal;color:#fff}
 
 /* Ook bij ons */
-.kaarten{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
-.kaartje{background:#fff;border-radius:6px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 0 #e3d8c0}
-.kaartje img{width:100%;aspect-ratio:4/3;object-fit:cover}
-.kaartje>div{padding:24px 24px 28px;display:flex;flex-direction:column;gap:6px;flex:1}
-.kaartje p{color:var(--grijs);font-size:16px}
-.link{margin-top:auto;padding-top:10px;color:var(--leer);font-weight:700;font-size:15px;text-decoration:none}
+.twee.gelijk{grid-template-columns:1fr 1fr;align-items:start;margin-top:40px}
+.ook article .foto{margin-bottom:22px}
+.ook article .foto img{aspect-ratio:3/2;object-fit:cover}
+.ook article .foto.klein{max-width:440px}
+.ook article .foto.boven img{object-position:50% 25%}
+.ook article p{max-width:30em}
+.link{display:inline-block;margin-top:14px;color:var(--goud2);font-weight:700;font-size:16px;text-decoration:none}
 .link::after{content:" →"}
 
-/* Citaat met parallax */
-.citaat{position:relative;overflow:hidden;padding:clamp(110px,16vw,200px) 0}
+/* Citaat met parallax: warm en zichtbaar, niet grauw */
+.citaat{position:relative;overflow:hidden;padding:clamp(120px,17vw,220px) 0;background:var(--nacht)}
 .parallax{position:absolute;inset:0}
-.parallax img{position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover;opacity:.32}
+.parallax::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,22,18,.88),rgba(12,22,18,.6) 55%,rgba(12,22,18,.15))}
+.parallax img{position:absolute;left:0;top:-12%;width:100%;height:124%;object-fit:cover}
 .citaat .wrap{position:relative}
-blockquote{font-family:Georgia,serif;font-size:clamp(24px,3.2vw,40px);line-height:1.3;max-width:24em;color:#fff}
+blockquote{font-family:Georgia,serif;font-size:clamp(25px,3.3vw,42px);line-height:1.3;max-width:23em;color:#fff;text-shadow:0 2px 24px rgba(0,0,0,.4)}
 blockquote::before{content:"“";display:block;font-size:2.4em;line-height:.6;color:var(--goud);margin-bottom:10px}
 cite{display:block;font:600 14px system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--goud);margin-top:24px}
 
-/* Praktisch */
+/* Praktisch: licht, rustig en makkelijk te lezen */
+.praktisch{background:var(--room)}
+.praktisch .oogje{color:var(--leer)}
 .praktisch .twee{align-items:start}
-.tijden{border-collapse:collapse;width:100%;max-width:420px;margin-top:10px;font-size:17px}
+.tijden{border-collapse:collapse;width:100%;max-width:440px;margin-top:10px;font-size:17px}
 .tijden th,.tijden td{text-align:left;padding:11px 0;border-bottom:1px solid #ddd1b6;font-weight:400}
 .tijden td{text-align:right;font-variant-numeric:tabular-nums}
 .tijden tr.dicht{color:#9a8f7a}
@@ -121,7 +144,7 @@ cite{display:block;font:600 14px system-ui,sans-serif;letter-spacing:.2em;text-t
 .weetjes dt{font-weight:700;font-size:15px;color:var(--groen);margin-top:14px}
 .weetjes dd{color:var(--grijs);font-size:16px}
 
-footer{background:var(--groen);color:#cdd6d0;padding:40px 0;font-size:15px}
+footer{background:var(--nacht);color:#cdd6d0;padding:40px 0;font-size:15px}
 footer strong{color:var(--goud)}footer .klein{color:#93a39b;margin-top:6px}
 
 /* Beweging: alleen als het script .beweeg op html zet */
@@ -149,10 +172,11 @@ footer strong{color:var(--goud)}footer .klein{color:#93a39b;margin-top:6px}
 @media (max-width:960px){
  nav{display:none}
  .status{margin-left:auto}
- .twee,.twee.omgekeerd{grid-template-columns:1fr}
- .foto.staand{justify-self:start}
- .drie,.kaarten{grid-template-columns:1fr 1fr}
- .borden{grid-template-columns:1fr}
+ .twee,.welkom .twee,.sport .onder,.kopregel{grid-template-columns:1fr}
+ .strook{grid-template-columns:1fr 1fr}
+ .borden{grid-template-columns:1fr 1fr}
+ .borden .foto{grid-column:1 / -1}
+ .borden .foto img{aspect-ratio:16/10}
 }
 /* Telefoon: foto boven, tekst eronder */
 @media (max-width:640px){
@@ -162,16 +186,22 @@ footer strong{color:var(--goud)}footer .klein{color:#93a39b;margin-top:6px}
  .status{font-size:12px;padding:6px 11px}
  .opening{display:block;min-height:0;padding:0 0 48px}
  .dia-vak{position:relative;aspect-ratio:4/3}
- .dia-vak::after{background:linear-gradient(0deg,var(--groen),transparent 30%)}
+ .dia-vak::after{background:linear-gradient(0deg,var(--nacht),transparent 28%)}
  .bijschrift{top:12px;right:12px;bottom:auto;font-size:12px}
  .opening .wrap{margin-top:8px}
  .opening h1{font-size:44px}
  .knop{padding:13px 22px;font-size:15px}
- .drie,.kaarten{grid-template-columns:1fr;gap:28px}
- .foto.staand{max-width:none}
- .bord{padding:26px 22px;border-width:10px}
+ .foto.groot img{aspect-ratio:4/5}
+ .strook{gap:12px}
+ figure.ai::after{font-size:10px;top:7px;left:7px;padding:2px 7px;letter-spacing:.03em}
+ .strook figcaption{font-size:14px}
+ .foto.breed img{aspect-ratio:4/3}
+ .borden{grid-template-columns:1fr}
+ .bord{padding:24px 20px;border-width:10px}
  .bord li{font-size:17px}
+ .twee.gelijk{gap:48px}
  .tijden{max-width:none}
- .citaat{padding:90px 0}
+ .citaat{padding:100px 0}
+ .parallax::after{background:rgba(12,22,18,.66)}
 }
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
