@@ -49,11 +49,9 @@ nav a{text-decoration:none;opacity:.85}nav a:hover{opacity:1;color:var(--goud2)}
 .bijschrift .nr{color:var(--goud);font-variant-numeric:tabular-nums}
 .bijschrift .tekst{transition:opacity .5s}.bijschrift .tekst.wissel{opacity:0}
 
-/* Foto's, met een klein label op AI-beelden */
+/* Foto's */
 .foto{position:relative;border-radius:6px;overflow:hidden}
 .foto img{width:100%}
-figure.ai{position:relative}
-figure.ai::after{content:"AI-impressie";position:absolute;top:10px;left:10px;font-size:11px;letter-spacing:.06em;color:#fff;background:rgba(0,0,0,.42);padding:3px 8px;border-radius:99px;pointer-events:none}
 figcaption{font-size:15px;padding-top:10px}
 
 /* Donkere secties */
@@ -193,7 +191,6 @@ footer strong{color:var(--goud)}footer .klein{color:#93a39b;margin-top:6px}
  .knop{padding:13px 22px;font-size:15px}
  .foto.groot img{aspect-ratio:4/5}
  .strook{gap:12px}
- figure.ai::after{font-size:10px;top:7px;left:7px;padding:2px 7px;letter-spacing:.03em}
  .strook figcaption{font-size:14px}
  .foto.breed img{aspect-ratio:4/3}
  .borden{grid-template-columns:1fr}
